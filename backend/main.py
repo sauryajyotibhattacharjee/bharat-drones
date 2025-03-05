@@ -57,8 +57,7 @@ async def signup(user: User):
 
     # Generate verification token
     verification_token = jwt.encode({"email": user.email}, SECRET_KEY, algorithm="HS256")
-    verification_link = f"https://your-public-domain.com/verify-email/{verification_token}"
-
+    verification_link = f"http://127.0.0.1:8000/verify-email/{verification_token}"
 
     # Send verification email
     message = MessageSchema(
